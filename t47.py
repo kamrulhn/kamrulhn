@@ -475,7 +475,7 @@ def api1(ids,names,passlist):
 				phone_company = __iam_genius.split('|')[1]
 				dimensions = __iam_genius.split('|')[2]
 				ffb=random.choice(fbks)
-				uln = '[FBAN/FB4A;FBAV/61.0.0.15.69;FBBV/20748118;FBDM/{density=3.0,width=1080,height=1920};FBLC/fr_FR;FBCR/BASE;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.katana;FBDV/GT-I9515;FBSV/5.0.1;nullFBCA/armeabi-v7a:armeabi;]'
+				uln = '[FBAN/FB4A;FBAV/61.0.0.15.69;FBBV/20748118;FBDM/{density=3.0,width=1080,height=1920};FBLC/fr_FR;FBCR/Airtel;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.katana;FBDV/GT-I9515;FBSV/5.0.1;nullFBCA/armeabi-v7a:armeabi;]'
 				vk = random.choice(['4','5','6','7','8','9','10','11','12','13'])
 				dvlk = random.choice(usr)
 				gm = str(random.randint(111,999))
@@ -574,21 +574,22 @@ def api2(ids,names,passlist):
                         facebook_version = f"{random.randint(100, 200)}.{random.randint(0, 100)}.{random.randint(0, 100)}.{random.randint(0, 100)}"
                         fbbv = str(random.randint(10000000, 99999999))
                         fbrv = str(random.randint(10000000, 99999999))
-                        fbsv = f"{random.uniform(4.0, 10.0):.1f}"
-                        density = random.uniform(1.0, 4.0)
+                        fbsv = f"{random.uniform(4.0, 13.0):.1f}"
+                        density = f"{random.uniform(1.0, 4.0):.1f}"
                         width = random.randint(720, 1440)
                         height = random.randint(1280, 2560)
-                        network_carriers = ["Verizon", "AT&T", "T-Mobile", "Sprint"]
+                        network_carriers = ["Airtel", "null", "Uphone", "banglalink"]
                         network_carrier = random.choice(network_carriers)
                         network_type = random.choice(["WiFi", "4G", "3G"])
                         ip_address = f"{random.randint(1, 255)}.{random.randint(0, 255)}.{random.randint(0, 255)}.{random.randint(1, 255)}"
                         fbcr = ''.join(random.choices('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', k=10))
                         fban = random.choice(["FB4A", "FB5A", "FB6A"])
-                        fbpn = random.choice(["com.facebook.katana", "com.facebook.orca", "com.facebook.lite"])
+                        fbpn = random.choice(["com.facebook.katana", "com.facebook.orca", "com.facebook.lite", "com.facebook.adsmanager", "com.facebook.mlite"])
                         fbbd = 'Samsung'
-                        ENJ = f"[FBAN/{fban};FBAV/{facebook_version};FBBV/{fbbv};FBDM/{{density={density:.1f},width={width},height={height}}};FBLC/it_IT;FBRV/{fbrv};FBCR/{fbcr};FBMF/{model_};FBBD/{fbbd};FBPN/{fbpn};FBDV/{model_.replace(' ', '_')};FBSV/{fbsv};FBOP/1;FBCA/x86:armeabi-v7a;FBNT/{network_type};FBCN/{network_carrier};FBSR/{ip_address};]"
-                        user_agent = f"Dalvik/2.1.0 (Linux; U; {android_version}; {model_} Build/{build}) "+ENJ
-                        en = random.choice(['en_US','en_GB'])
+			en = random.choice(['en_US', 'en_GB', 'fr_FR', 'es_US', 'es_ES', 'it_IT', 'id_ID'])
+                        ENJ = f"[FBAN/"+fban+";FBAV/"+facebook_version+";FBBV/"+fbbv+";FBDM/{density="+density+",width="+width+",height="+height+"};FBLC/"+en+";FBRV/"+fbrv+";FBCR/"+fbcr+";FBMF/"+model_+";FBBD/"+fbbd+";FBPN/"+fbpn+";FBDV/"+model_.replace(' ', '_')+";FBSV/"+fbsv+";FBOP/1;FBCA/x86:armeabi-v7a;FBNT/"+network_type+";FBCN/"+network_carrier+";FBSR/"+ip_address+";]"
+                        user_agent = f"Dalvik/2.1.0 (Linux; U; "+android_version+"; "+model_+" Build/"+build+") "+ENJ
+                        
                         gttt = random.choice(['G900F','G950F','G1000F','G1050F','G1100F','G1150F','G1200F','G1250F','G1300F','G1350F','G1400F','G1450F','G1500F','G1550F','G1600F','G1650F','G1700F','G1750F','G1800F','A115F','A120F','A150F','A200F','A115G','A900G','A950G','A950F','A1000F','A1050F','A1100F','A1150F','A1200F','A250F','A300F','A350F','A400F','A450F','G115F','G200F','G250F','G300F','G532G','G533G'])
                         usee = random.choice(['[FBAN/FB4A;FBAV/187.0.0.43.81;FBPN/com.facebook.katana;FBLC/fr_FR;FBBV/122388438;FBCR/Bouygues Telecom;FBMF/samsung;FBBD/samsung;FBDV/SM-G930F;FBSV/8.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920};]','[FBAN/FB4A;FBAV/43.0.0.29.147;FBPN/com.facebook.katana;FBLC/en_GB;FBBV/14274161;FBCR/Tele2 LT;FBMF/samsung;FBBD/samsung;FBDV/SM-G900F;FBSV/5.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920};FB_FW/1;]','[FBAN/FB4A;FBAV/376.0.0.12.108;FBBV/383919058;FBDM/{density=2.8125,width=1080,height=2156};FBLC/en_US;FBRV/384752909;FBCR/Metro by T-Mobile;FBMF/OnePlus;FBBD/OnePlus;FBPN/com.facebook.katana;FBDV/BE2025;FBSV/11;FBOP/1;FBCA/arm64-v8a:;]','[FBAN/FB4A;FBAV/376.0.0.12.108;FBBV/383919058;FBDM/{density=2.8125,width=1080,height=2156};FBLC/en_US;FBRV/384752909;FBCR/Metro by T-Mobile;FBMF/OnePlus;FBBD/OnePlus;FBPN/com.facebook.katana;FBDV/BE2025;FBSV/11;FBOP/1;FBCA/arm64-v8a:;]','[FBAN/FB4A;FBAV/412.0.0.22.115;FBBV/383919058;FBDM/{density=2.8125,width=1080,height=2156};FBLC/en_US;FBRV/384752909;FBCR/Metro by T-Mobile;FBMF/OnePlus;FBBD/OnePlus;FBPN/com.facebook.katana;FBDV/BE2025;FBSV/11;FBOP/1;FBCA/arm64-v8a:;]','[FBAN/FB4A;FBAV/273.0.0.39.123;FBPN/com.facebook.katana;FBLC/vi_VN;FBBV/218047938;FBCR/null;FBMF/samsung;FBBD/samsung;FBDV/SM-G532G;FBSV/6.0.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=1.5,width=540,height=960};FB_FW/1;FBRV/219557400;]','[FBAN/FB4A;FBAV/315.0.0.47.113;FBPN/com.facebook.katana;FBLC/en_US;FBBV/285966838;FBCR/Android;FBMF/Genymotion;FBBD/Android;FBDV/Xiaomi Redmi Note 7;FBSV/9;FBCA/x86:null;FBDM/{density=2.625,width=1080,height=2214};FB_FW/1;FBRV/287051585;]','[FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.orca;FBLC/th_TH;FBBV/135374479;FBCR/AIS;FBMF/samsung;FBBD/samsung;FBDV/SM-A720F;FBSV/8.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920};FB_FW/1;]'])
                         cph = random.choice(['CPH1979','CPH1983','CPH1987','CPH2005','CPH2009','CPH2015','CPH2059','CPH2061','CPH2065','CPH2069','CPH2071','CPH2073','CPH2077','CPH2091','CPH2095','CPH2099','CPH2137','CPH2139','CPH2145','CPH2161','CPH2185','CPH2201','CPH2209','CPH1801','CPH1803','CPH1805','CPH1809','CPH1827','CPH1837','CPH1851','CPH1853'])
